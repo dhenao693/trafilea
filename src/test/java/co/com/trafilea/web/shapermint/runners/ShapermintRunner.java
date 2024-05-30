@@ -9,8 +9,8 @@ import org.junit.runner.RunWith;
         features = {
                 "src/test/resources/features/buy.feature"
         },
-        glue = {"co/com/pragma/web/demoblaze/stepdefinitions"},
+        glue = {"co/com/trafilea/web/shapermint/stepdefinitions"},
         snippets = CucumberOptions.SnippetType.CAMELCASE
 )
-public class DemoblazeRunner {
+public class ShapermintRunner {
 }

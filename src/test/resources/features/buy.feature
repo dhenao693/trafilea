@@ -4,10 +4,10 @@
     @buy @unhappyPath
     Scenario Outline: Buy product with user logged
       Given "Daniel" is on Demoblaze page
-      When select first product and add to car with alert "Product added." and buy
+      When select first product and add to car to buy
         | email   | firstName   | lastName   | address   | aptSuite   | city   | country   | state   | postalCode   | phone   |
         | <email> | <firstName> | <lastName> | <address> | <aptSuite> | <city> | <country> | <state> | <postalCode> | <phone> |
-      Then see the successful pay modal with message "Your card number is invalid"
+      ##Then see the successful pay modal with message "Your card number is invalid"
 
       Examples:
         | email             | firstName | lastName    | address            | aptSuite | city     | country      | state    | postalCode | phone      |

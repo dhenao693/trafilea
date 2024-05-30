@@ -1,6 +1,6 @@
 package co.com.trafilea.web.shapermint.stepdefinitions;
 
-import co.com.trafilea.web.shapermint.interactions.buy.FillUserForm;
+import co.com.trafilea.web.shapermint.tasks.buy.FillUserForm;
 import co.com.trafilea.web.shapermint.questions.SeeConfirmPay;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -13,8 +13,8 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static org.hamcrest.Matchers.equalTo;
 
 public class BuyStepDefinition {
-    @When("select first product and add to car with alert {string} and buy")
-    public void completeBuy(String alertMessage, List<Map<String, String>> userInfo) {
+    @When("select first product and add to car to buy")
+    public void completeBuy(List<Map<String, String>> userInfo) {
         theActorInTheSpotlight().attemptsTo(FillUserForm.toPay(userInfo));
     }
 
