@@ -1,8 +1,8 @@
 defaultTasks 'clean', 'test', 'aggregate'
-group = 'co.com.sundevs.reto.cinemark'
+group = 'co.com.trafilea.reto.shapermint'
 version = '1.0'
 
-description = """Reto SunDevs"""
+description = """Reto Trafilea"""
 repositories {
      mavenLocal()
     mavenCentral()
