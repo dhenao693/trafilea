@@ -6,10 +6,12 @@ import net.serenitybdd.screenplay.targets.Target;
 import net.thucydides.core.annotations.DefaultUrl;
 import org.openqa.selenium.By;
 
+
 @DefaultUrl(Constants.URL_HOME)
 public class DemoblazeHomePage extends PageObject {
-    public static final Target BTN_LOG_IN = Target.the("Log in button")
-            .located(By.id("login2"));
+    public static final Target BTN_OUR_FIRST_BEST_SELLER = Target.the("Our first best seller")
+            .located(By.xpath("(//*[text()='Our Best Sellers']/parent::div//a)[1]"));
+
     public static final Target BTN_SING_UP = Target.the("Log out button")
             .located(By.id("login2"));
     public static final Target BTN_CAR = Target.the("Car button")
