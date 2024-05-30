@@ -1,0 +1,70 @@
+defaultTasks 'clean', 'test', 'aggregate'
+group = 'co.com.sundevs.reto.cinemark'
+version = '1.0'
+
+description = """Reto SunDevs"""
+repositories {
+     mavenLocal()
+    mavenCentral()
+}
+
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath("net.serenity-bdd:serenity-gradle-plugin:3.2.5")
+    }
+}
+
+ext{
+    serenityVersion = '3.2.5'
+    serenityCucumberVersion = '3.2.5'
+    lombokVersion = '1.18.30'
+}
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'eclipse'
+apply plugin: 'net.serenity-bdd.aggregator'
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+
+dependencies {
+    testImplementation group: 'net.serenity-bdd', name: 'serenity-core', version: "$rootProject.ext.serenityVersion"
+    testImplementation group: 'net.serenity-bdd', name: 'serenity-junit', version: "$rootProject.ext.serenityVersion"
+    testImplementation group: 'junit', name: 'junit', version: '4.12'
+    testImplementation group: 'org.assertj', name: 'assertj-core', version: '3.8.0'
+    testImplementation group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.7'
+
+    testImplementation 'io.github.bonigarcia:webdrivermanager:5.7.0'
+
+    implementation group: 'net.serenity-bdd', name: 'serenity-screenplay', version: "$rootProject.ext.serenityVersion"
+    implementation group: 'net.serenity-bdd', name: 'serenity-cucumber', version: "$rootProject.ext.serenityCucumberVersion"
+    implementation "net.serenity-bdd:serenity-core:$rootProject.ext.serenityCucumberVersion"
+    implementation 'net.serenity-bdd:serenity-junit:3.2.5'
+
+    compileOnly "org.projectlombok:lombok:$rootProject.ext.lombokVersion"
+    annotationProcessor "org.projectlombok:lombok:$rootProject.ext.lombokVersion"
+
+    testCompileOnly "org.projectlombok:lombok:$rootProject.ext.lombokVersion"
+    testAnnotationProcessor "org.projectlombok:lombok:$rootProject.ext.lombokVersion"
+
+
+}
+test {
+    testLogging.showStandardStreams = true
+    systemProperties System.getProperties()
+    finalizedBy(aggregate)
+}
+tasks.withType(JavaCompile) {
+    options.encoding('UTF-8')
+}
+gradle.startParameter.continueOnFailure = true
