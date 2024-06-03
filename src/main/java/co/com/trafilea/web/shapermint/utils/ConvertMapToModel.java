@@ -18,7 +18,7 @@ public class ConvertMapToModel {
                 .city(map.get("city"))
                 .country(map.get("country"))
                 .state(map.get("state"))
-                .postalCode(map.get("postalCode"))
+                .zipCode(map.get("postalCode"))
                 .phone(map.get("phone"))
                 .build();
     }

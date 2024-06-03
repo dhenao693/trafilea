@@ -14,6 +14,6 @@ public class UserInfo {
     private String city;
     private String country;
     private String state;
-    private String postalCode;
+    private String zipCode;
     private String phone;
 }
