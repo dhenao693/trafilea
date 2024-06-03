@@ -1,8 +1,12 @@
 package co.com.trafilea.web.shapermint.stepdefinitions;
 
 import co.com.trafilea.web.shapermint.interactions.buy.FillCardInformation;
+import co.com.trafilea.web.shapermint.questions.InvalidCard;
+import co.com.trafilea.web.shapermint.questions.ValidateShippingMethod;
+import co.com.trafilea.web.shapermint.questions.ValidateUrl;
 import co.com.trafilea.web.shapermint.tasks.buy.SelectProduct;
 import co.com.trafilea.web.shapermint.questions.SeeConfirmPay;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
@@ -11,7 +15,7 @@ import java.util.Map;
 
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
-import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.*;
 
 public class BuyStepDefinition {
     @When("select first product and add to car to buy")
@@ -24,8 +28,18 @@ public class BuyStepDefinition {
         theActorInTheSpotlight().attemptsTo(FillCardInformation.toPay(cardInfo));
     }
 
-    @Then("see the successful pay modal with message {string}")
-    public void seeTheSuccessfulPayModal(String message) {
-        theActorInTheSpotlight().should(seeThat(SeeConfirmPay.modal(), equalTo(message)));
+    @Then("see the shipping type {string}")
+    public void seeTheShippingType(String shippingType) {
+        theActorInTheSpotlight().should(seeThat(ValidateShippingMethod.inPay(shippingType)));
+    }
+
+    @Then("see the failed pay with message {string} in card")
+    public void seeTheFailedPayWithMessageInCard(String cardMessage) {
+        theActorInTheSpotlight().should(seeThat(InvalidCard.inPay(cardMessage)));
+    }
+
+    @Then("the url contains {string}")
+    public void theUrlContains(String urlContain) {
+        theActorInTheSpotlight().should(seeThat(ValidateUrl.active(), containsString(urlContain)));
     }
 }

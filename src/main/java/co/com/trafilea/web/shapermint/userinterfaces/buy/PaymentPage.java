@@ -33,12 +33,19 @@ public class PaymentPage {
             .located(name("delivery.phone"));
 
 
+    public static final Target CHK_SHIPPING_TYPE_CHECKED= Target.the("")
+            .locatedBy("//p[text()='{0}']/parent::div/parent::div/parent::div//input[@checked]");
+
+
+
     public static final Target IFRAME_CARD_NUMBER = Target.the("Secure card number input frame")
             .located(xpath("//iframe[@title='Secure card number input frame']"));
 
     public static final Target LBL_CARD_NUMBER = Target.the("")
             .located(name("cardnumber"));
 
+    public static final Target LBL_INVALID_CARD_NUMBER = Target.the("")
+            .locatedBy("//span[text()='{0}']");
 
     public static final Target LBL_CARD_NAME = Target.the("")
             .located(xpath("//input[@data-testid='base-input' and @placeholder='Name on card']"));

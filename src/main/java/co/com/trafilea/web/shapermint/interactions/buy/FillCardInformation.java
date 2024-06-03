@@ -52,7 +52,5 @@ public class FillCardInformation implements Interaction {
         actor.attemptsTo(
                 SwitchToDefault.content()
         );
-
-        System.out.println("");
     }
 }
