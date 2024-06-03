@@ -15,4 +15,6 @@ public class ItemPage {
     public static final Target LBL_PRODUCT_TITLE_IN_CAR = Target.the("Our first best seller")
             .located(By.xpath("((//ul[@data-testid='line-items'])[1]//span)[1]"));
 
+    public static final Target BTN_PROCEED_TO_CHECKOUT = Target.the("Button proceed to checkout")
+            .located(By.xpath("(//*[@data-testid='proceed-to-checkout'])[1]"));
 }

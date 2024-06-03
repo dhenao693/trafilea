@@ -1,6 +1,7 @@
 package co.com.trafilea.web.shapermint.stepdefinitions;
 
-import co.com.trafilea.web.shapermint.tasks.buy.FillUserForm;
+import co.com.trafilea.web.shapermint.interactions.buy.FillCardInformation;
+import co.com.trafilea.web.shapermint.tasks.buy.SelectProduct;
 import co.com.trafilea.web.shapermint.questions.SeeConfirmPay;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -14,8 +15,13 @@ import static org.hamcrest.Matchers.equalTo;
 
 public class BuyStepDefinition {
     @When("select first product and add to car to buy")
-    public void completeBuy(List<Map<String, String>> userInfo) {
-        theActorInTheSpotlight().attemptsTo(FillUserForm.toPay(userInfo));
+    public void selectProduct(List<Map<String, String>> userInfo) {
+        theActorInTheSpotlight().attemptsTo(SelectProduct.toPay(userInfo));
+    }
+
+    @When("fill payment info")
+    public void completePaymentInfo(List<Map<String, String>> cardInfo) {
+        theActorInTheSpotlight().attemptsTo(FillCardInformation.toPay(cardInfo));
     }
 
     @Then("see the successful pay modal with message {string}")

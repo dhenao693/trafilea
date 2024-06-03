@@ -1,12 +1,12 @@
 package co.com.trafilea.web.shapermint.utils;
 
 
+import co.com.trafilea.web.shapermint.models.CardInfo;
 import co.com.trafilea.web.shapermint.models.UserInfo;
 
 import java.util.Map;
 
 public class ConvertMapToModel {
-
 
     public static UserInfo convertMapToUserInfo(Map<String, String> map) {
         return UserInfo.builder()
@@ -20,6 +20,15 @@ public class ConvertMapToModel {
                 .state(map.get("state"))
                 .postalCode(map.get("postalCode"))
                 .phone(map.get("phone"))
+                .build();
+    }
+
+    public static CardInfo convertMapToCardInfo(Map<String, String> map) {
+        return CardInfo.builder()
+                .cardNumber(map.get("cardNumber"))
+                .cardName(map.get("cardName"))
+                .expDate(map.get("expDate").replace("/",""))
+                .cvv(map.get("cvv"))
                 .build();
     }
 }
