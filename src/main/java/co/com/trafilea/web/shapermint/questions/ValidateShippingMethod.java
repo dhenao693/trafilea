@@ -10,9 +10,10 @@ import static co.com.trafilea.web.shapermint.userinterfaces.buy.PaymentPage.CHK_
 public class ValidateShippingMethod implements Question<Boolean> {
     private final String shippingType;
 
-    public static ValidateShippingMethod inPay(String shippingType){
+    public static ValidateShippingMethod inPay(String shippingType) {
         return new ValidateShippingMethod(shippingType);
     }
+
     @Override
     public Boolean answeredBy(Actor actor) {
         return CHK_SHIPPING_TYPE_CHECKED.of(shippingType).resolveFor(actor).isPresent();

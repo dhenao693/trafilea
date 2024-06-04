@@ -1,6 +1,8 @@
 # Gradle Project Setup
 
-This README file contains the necessary information for setting up and executing your Gradle project, specifically for the task `gradle clean build test`. We also recommend using Gradle version 7.0 and provide instructions for changing the default Firefox browser configuration to run your project with Chrome or Edge.
+This README file contains the necessary information for setting up and executing your Gradle project, specifically for
+the task `gradle clean build test`. We also recommend using Gradle version 7.0 and provide instructions for changing the
+default Firefox browser configuration to run your project with Chrome or Edge.
 
 ## Commands
 
@@ -12,7 +14,8 @@ This README file contains the necessary information for setting up and executing
 
 ## Default Configuration
 
-By default, the project is configured to run in Firefox. You can change the browser by following the instructions in the [Changing Browser Configuration](#changing-browser-configuration) section.
+By default, the project is configured to run in Firefox. You can change the browser by following the instructions in
+the [Changing Browser Configuration](#changing-browser-configuration) section.
 
 ## Changing Browser Configuration
 
@@ -22,7 +25,8 @@ By default, the project is configured to run in Firefox. You can change the brow
 
 ## Updating Drivers
 
-In some cases, the driver version used by Serenity's DriverManager may not be compatible with the chosen browser. If that happens, you need to update the drivers in the `src/test/resources/drivers` directory.
+In some cases, the driver version used by Serenity's DriverManager may not be compatible with the chosen browser. If
+that happens, you need to update the drivers in the `src/test/resources/drivers` directory.
 
 1. Download and save the compatible driver version for your chosen browser.
 2. Open the `serenity.properties` file in the `src/test/resources` directory.

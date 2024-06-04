@@ -30,7 +30,7 @@ public class PaymentPage {
     public static final Target LBL_PHONE_NUMBER = Target.the("")
             .located(name("delivery.phone"));
 
-    public static final Target CHK_SHIPPING_TYPE_CHECKED= Target.the("")
+    public static final Target CHK_SHIPPING_TYPE_CHECKED = Target.the("")
             .locatedBy("//p[text()='{0}']/parent::div/parent::div/parent::div//input[@checked]");
 
     public static final Target IFRAME_CARD_NUMBER = Target.the("Secure card number input frame")

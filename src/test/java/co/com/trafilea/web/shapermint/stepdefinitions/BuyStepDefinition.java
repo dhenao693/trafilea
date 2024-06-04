@@ -5,8 +5,6 @@ import co.com.trafilea.web.shapermint.questions.InvalidCard;
 import co.com.trafilea.web.shapermint.questions.ValidateShippingMethod;
 import co.com.trafilea.web.shapermint.questions.ValidateUrl;
 import co.com.trafilea.web.shapermint.tasks.buy.SelectProduct;
-import co.com.trafilea.web.shapermint.questions.SeeConfirmPay;
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
@@ -15,7 +13,7 @@ import java.util.Map;
 
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
-import static org.hamcrest.Matchers.*;
+import static org.hamcrest.Matchers.containsString;
 
 public class BuyStepDefinition {
     @When("select first product and add to car to buy")

@@ -16,7 +16,4 @@ public class ShapermintHomePage extends PageObject {
             .located(By.xpath("(//*[text()='Our Best Sellers']/parent::div//a)[1]"));
 
 
-
-
-
 }

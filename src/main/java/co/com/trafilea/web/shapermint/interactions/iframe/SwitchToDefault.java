@@ -6,7 +6,7 @@ import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 
 public class SwitchToDefault implements Interaction {
-    public static SwitchToDefault content(){
+    public static SwitchToDefault content() {
         return Tasks.instrumented(SwitchToDefault.class);
     }
 

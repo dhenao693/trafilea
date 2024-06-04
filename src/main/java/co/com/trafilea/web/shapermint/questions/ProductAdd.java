@@ -14,7 +14,7 @@ public class ProductAdd implements Question<String> {
         return Text.of(LBL_PRODUCT_TITLE_IN_CAR).answeredBy(actor);
     }
 
-    public static ProductAdd toCar(){
+    public static ProductAdd toCar() {
         return new ProductAdd();
     }
 }

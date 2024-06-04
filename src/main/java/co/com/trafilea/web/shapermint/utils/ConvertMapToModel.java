@@ -27,7 +27,7 @@ public class ConvertMapToModel {
         return CardInfo.builder()
                 .cardNumber(map.get("cardNumber"))
                 .cardName(map.get("cardName"))
-                .expDate(map.get("expDate").replace("/",""))
+                .expDate(map.get("expDate").replace("/", ""))
                 .cvv(map.get("cvv"))
                 .build();
     }

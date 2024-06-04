@@ -4,7 +4,7 @@ version = '1.0'
 
 description = """Reto Trafilea"""
 repositories {
-     mavenLocal()
+    mavenLocal()
     mavenCentral()
 }
 
@@ -19,7 +19,7 @@ buildscript {
     }
 }
 
-ext{
+ext {
     serenityVersion = '3.2.5'
     serenityCucumberVersion = '3.2.5'
     lombokVersion = '1.18.30'

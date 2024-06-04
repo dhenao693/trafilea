@@ -7,7 +7,6 @@ import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 
-
 import static net.serenitybdd.screenplay.actors.OnStage.*;
 
 
