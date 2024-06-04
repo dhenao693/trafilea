@@ -15,6 +15,6 @@ public class ValidateShippingMethod implements Question<Boolean> {
     }
     @Override
     public Boolean answeredBy(Actor actor) {
-        return CHK_SHIPPING_TYPE_CHECKED.of(shippingType).isVisibleFor(actor);
+        return CHK_SHIPPING_TYPE_CHECKED.of(shippingType).resolveFor(actor).isPresent();
     }
 }
