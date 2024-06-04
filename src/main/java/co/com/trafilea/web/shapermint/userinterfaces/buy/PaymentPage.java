@@ -1,7 +1,6 @@
 package co.com.trafilea.web.shapermint.userinterfaces.buy;
 
 import net.serenitybdd.screenplay.targets.Target;
-import org.openqa.selenium.By;
 
 import static org.openqa.selenium.By.name;
 import static org.openqa.selenium.By.xpath;
@@ -9,7 +8,6 @@ import static org.openqa.selenium.By.xpath;
 public class PaymentPage {
     public static final Target LBL_EMAIL = Target.the("Email")
             .located(name("email"));
-
 
     public static final Target LBL_FIRST_NAME = Target.the("")
             .located(name("delivery.buyer_name"));
@@ -32,11 +30,8 @@ public class PaymentPage {
     public static final Target LBL_PHONE_NUMBER = Target.the("")
             .located(name("delivery.phone"));
 
-
     public static final Target CHK_SHIPPING_TYPE_CHECKED= Target.the("")
             .locatedBy("//p[text()='{0}']/parent::div/parent::div/parent::div//input[@checked]");
-
-
 
     public static final Target IFRAME_CARD_NUMBER = Target.the("Secure card number input frame")
             .located(xpath("//iframe[@title='Secure card number input frame']"));

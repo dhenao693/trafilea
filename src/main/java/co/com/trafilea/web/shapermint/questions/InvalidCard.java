@@ -1,6 +1,5 @@
 package co.com.trafilea.web.shapermint.questions;
 
-import co.com.trafilea.web.shapermint.userinterfaces.buy.PaymentPage;
 import lombok.AllArgsConstructor;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;

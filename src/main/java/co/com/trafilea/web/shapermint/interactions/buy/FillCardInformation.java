@@ -3,12 +3,10 @@ package co.com.trafilea.web.shapermint.interactions.buy;
 import co.com.trafilea.web.shapermint.interactions.iframe.SwitchTo;
 import co.com.trafilea.web.shapermint.interactions.iframe.SwitchToDefault;
 import co.com.trafilea.web.shapermint.models.CardInfo;
-import co.com.trafilea.web.shapermint.utils.ConvertMapToModel;
 import lombok.AllArgsConstructor;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Interaction;
 import net.serenitybdd.screenplay.Tasks;
-import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.serenitybdd.screenplay.actions.Enter;
 
 import java.util.List;
